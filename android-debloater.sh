@@ -70,8 +70,11 @@ install_android_package 'com.aurora.store' 'https://auroraoss.com/downloads/Auro
 install_android_package 'org.fdroid.fdroid' 'https://f-droid.org/F-Droid.apk'
 
 install_android_package 'org.fossify.calendar' 'https://f-droid.org/repo/org.fossify.calendar_4.apk'
+install_android_package 'org.fossify.camera' 'https://f-droid.org/repo/org.fossify.camera_2.apk'
 install_android_package 'org.fossify.clock' 'https://f-droid.org/repo/org.fossify.clock_1.apk'
 install_android_package 'org.fossify.filemanager' 'https://f-droid.org/repo/org.fossify.filemanager_2.apk'
+install_android_package 'org.fossify.gallery' 'https://f-droid.org/repo/org.fossify.gallery_9.apk'
+install_android_package 'org.fossify.keyboard' 'https://f-droid.org/repo/org.fossify.keyboard_3.apk'
 
 install_android_package 'org.breezyweather' 'https://f-droid.org/repo/org.breezyweather_50201.apk'
 
@@ -163,6 +166,7 @@ disable_android_package \
     'com.asus.camera' \
     'com.codeaurora.snapcam' \
     'com.oppo.camera' \
+    'com.sec.android.app.camera' \
     'foundation.e.camera' \
     'org.lineageos.snap'
 
@@ -274,7 +278,8 @@ disable_android_package \
 # Keyboard
 disable_android_package \
     'com.asus.ime' \
-    'com.asus.keyboard'
+    'com.asus.keyboard' \
+    'com.samsung.android.honeyboard'
 
 # 1 Manual & Help & Guides
 disable_android_package \
