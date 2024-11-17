@@ -66,9 +66,10 @@ function reinstall_android_package {
 ############################################
 # Warning: These might be outdated. An App Store is required to update them
 
-install_android_package 'com.aurora.store' 'https://auroraoss.com/downloads/AuroraStore/Release/AuroraStore-4.4.4.apk'
+install_android_package 'com.aurora.store' 'https://auroraoss.com/downloads/AuroraStore/Release/AuroraStore-4.6.2.apk'
 install_android_package 'org.fdroid.fdroid' 'https://f-droid.org/F-Droid.apk'
 
+install_android_package 'org.fossify.calculator' 'https://f-droid.org/repo/org.fossify.calculator_3.apk'
 install_android_package 'org.fossify.calendar' 'https://f-droid.org/repo/org.fossify.calendar_4.apk'
 install_android_package 'org.fossify.camera' 'https://f-droid.org/repo/org.fossify.camera_2.apk'
 install_android_package 'org.fossify.clock' 'https://f-droid.org/repo/org.fossify.clock_1.apk'
@@ -76,7 +77,8 @@ install_android_package 'org.fossify.filemanager' 'https://f-droid.org/repo/org.
 install_android_package 'org.fossify.gallery' 'https://f-droid.org/repo/org.fossify.gallery_9.apk'
 install_android_package 'org.fossify.keyboard' 'https://f-droid.org/repo/org.fossify.keyboard_3.apk'
 
-install_android_package 'org.breezyweather' 'https://f-droid.org/repo/org.breezyweather_50201.apk'
+#install_android_package 'com.automattic.simplenote' 'https://github.com/Automattic/simplenote-android/releases/download/2.35/simplenote.apk'
+install_android_package 'org.breezyweather' 'https://f-droid.org/repo/org.breezyweather_50208.apk'
 
 # Only install Calling & Messaging apps if Android STK is installed (supports a SIM card)
 if is_android_package_installed 'com.android.stk'; then
