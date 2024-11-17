@@ -13,6 +13,13 @@
 # 3. Uninstalling the apps brings no benefits over disabling them, except for freeing up
 # their storage space. However, on most devices, this shouldn't really matter anyway.
 
+ADB_DEVICES=$(adb devices | grep -w "device" | grep -v "List")
+
+if [ -z "${ADB_DEVICES}" ]; then
+    echo "No ADB devices found!"
+    exit 1
+fi
+
 function is_android_package_installed {
     local PACKAGE_NAME="${1}"
 
