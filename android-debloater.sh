@@ -159,6 +159,7 @@ disable_android_package \
 
 # Calculator
 disable_android_package \
+    'com.android.calculator2' \
     'com.asus.calculator' \
     'com.coloros.calculator' \
     'com.miui.calculator'
@@ -402,6 +403,14 @@ disable_android_package \
     'com.samsung.android.themecenter' \
     'com.samsung.android.themestore'
 
+# Vendor Account
+disable_android_package \
+    'com.osp.app.signin'
+
+# Vendor Social
+disable_android_package \
+    'com.samsung.android.mateagent'
+
 # Video Editor
 disable_android_package \
     'com.asus.microfilm' \
@@ -558,6 +567,9 @@ disable_android_package \
     'com.miui.yellowpage' \
     'com.oplus.multiapp' \
     'com.samsung.android.app.spage' \
+    'com.samsung.android.authfw' \
+    'com.samsung.android.samsungpass' \
+    'com.samsung.android.samsungpassautofill' \
     'com.xiaomi.mipicks'
 
 # Degoogle
