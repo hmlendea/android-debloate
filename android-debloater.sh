@@ -29,18 +29,26 @@ function is_android_package_installed {
 
 function is_android_package_disabled {
     local PACKAGE_NAME="${1}"
-
+    
     ! is_android_package_installed "${PACKAGE_NAME}" && return 0
 
-    adb shell pm list packages --user 0 -d | sed -e 's/^package://g' -e 's/[^a-zA-Z0-9.-]//g' | grep -q "^${PACKAGE_NAME}$" && return 0
+    adb shell pm list packages --user 0 -d | sed -e 's/^package://g' -e 's/[^a-zA-Z0-9.-]//g' | grep -q "^(package:)*${PACKAGE_NAME}$" && return 0
     return 1
+}
+
+function enable_android_pacakge {
+    for PACKAGE_NAME in "${@}"; do
+        is_android_package_disabled "${PACKAGE_NAME}" || continue
+
+        echo -e "Enabling Android package: '\e[0;33m${PACKAGE_NAME}\e[0m'..."
+        adb shell pm enable --user 0 "${PACKAGE_NAME}"
+    done
 }
 
 function disable_android_package {
     for PACKAGE_NAME in "${@}"; do
-#        reinstall_android_package "${PACKAGE_NAME}"
         is_android_package_disabled "${PACKAGE_NAME}" && continue
-        
+
         echo -e "Disabling Android package: '\e[0;33m${PACKAGE_NAME}\e[0m'..."
         adb shell pm disable-user --user 0 "${PACKAGE_NAME}"
     done
@@ -57,6 +65,16 @@ function install_android_package {
     wget --continue "${PACKAGE_URL}" -O "${PACKAGE_FILE}"
     adb install "${PACKAGE_FILE}"
     rm "${PACKAGE_FILE}"
+}
+
+function uninstall_android_package {
+    for PACKAGE_NAME in "${@}"; do
+        ! is_android_package_installed "${PACKAGE_NAME}" && continue
+        is_android_package_disabled "${PACKAGE_NAME}" && continue
+
+        echo -e "Uninstalling Android package: '\e[0;33m${PACKAGE_NAME}\e[0m'..."
+        adb shell pm uninstall --user 0 "${PACKAGE_NAME}"
+    done
 }
 
 function reinstall_android_package {
@@ -262,7 +280,8 @@ disable_android_package \
     'com.asus.gallery' \
     'com.coloros.gallery3d' \
     'com.miui.gallery' \
-    'com.samsung.android.widget.pictureframe' \
+    'com.samsung.android.widget.pictureframe'
+uninstall_android_package \
     'com.sec.android.gallery3d'
 
 # Game Tools
