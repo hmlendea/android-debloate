@@ -32,7 +32,7 @@ function is_android_package_disabled {
     
     ! is_android_package_installed "${PACKAGE_NAME}" && return 0
 
-    adb shell pm list packages --user 0 -d | sed -e 's/^package://g' -e 's/[^a-zA-Z0-9.-]//g' | grep -q "^(package:)*${PACKAGE_NAME}$" && return 0
+    adb shell pm list packages --user 0 -d | sed -e 's/^package://g' -e 's/[^a-zA-Z0-9.-]//g' | grep -q "^${PACKAGE_NAME}$" && return 0
     return 1
 }
 
