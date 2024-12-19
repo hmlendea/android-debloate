@@ -36,7 +36,7 @@ function is_android_package_disabled {
     return 1
 }
 
-function enable_android_pacakge {
+function enable_android_package {
     for PACKAGE_NAME in "${@}"; do
         is_android_package_disabled "${PACKAGE_NAME}" || continue
 
@@ -344,8 +344,9 @@ disable_android_package \
 disable_android_package \
     'com.asus.kidslauncher' \
     'com.coloros.childrenspace' \
-    'com.google.android.gms.supervision' \
     'com.samsung.android.kidsinstaller'
+uninstall_android_package \
+    'com.google.android.gms.supervision'
 
 # Radio
 disable_android_package \
