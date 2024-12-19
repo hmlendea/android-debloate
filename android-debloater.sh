@@ -63,7 +63,7 @@ function install_android_package {
 
     echo -e "Installing Android package: '\e[0;33m${PACKAGE_NAME}\e[0m'..."
     wget --continue "${PACKAGE_URL}" -O "${PACKAGE_FILE}"
-    adb install "${PACKAGE_FILE}"
+    adb install --user 0 "${PACKAGE_FILE}"
     rm "${PACKAGE_FILE}"
 }
 
@@ -585,6 +585,7 @@ disable_android_package \
     'com.miui.phrase' \
     'com.miui.yellowpage' \
     'com.oplus.multiapp' \
+    'com.samsung.android.app.cocktailbarservice' \
     'com.samsung.android.app.spage' \
     'com.samsung.android.authfw' \
     'com.samsung.android.samsungpass' \
