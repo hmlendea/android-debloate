@@ -193,6 +193,7 @@ disable_android_package \
     'com.android.camera' \
     'com.asus.camera' \
     'com.codeaurora.snapcam' \
+    'com.oplus.camera' \
     'com.oppo.camera' \
     'com.sec.android.app.camera' \
     'foundation.e.camera' \
@@ -418,10 +419,10 @@ disable_android_package \
 # Theme
 disable_android_package \
     'com.android.thememanager' \
-    'com.oplus.themestore' \
     'com.samsung.android.app.dressroom' \
     'com.samsung.android.themecenter' \
     'com.samsung.android.themestore'
+uninstall_android_package 'com.oplus.themestore'
 
 # Vendor Account
 disable_android_package \
