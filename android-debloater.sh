@@ -86,30 +86,38 @@ function reinstall_android_package {
     adb shell pm install-existing --user 0 "${PACKAGE_NAME}"
 }
 
+if is_android_package_installed 'com.google.android.tv.remote.service'; then
+    DEVICE_TYPE='TV'
+else
+    DEVICE_TYPE='Phone'
+fi
+
 ############################################
 # INSTALLATIONS - ALTERNATIVE PROVISIONING #
 ############################################
 # Warning: These might be outdated. An App Store is required to update them
 
-install_android_package 'com.aurora.store' 'https://auroraoss.com/downloads/AuroraStore/Release/AuroraStore-4.6.2.apk'
-install_android_package 'org.fdroid.fdroid' 'https://f-droid.org/F-Droid.apk'
+if [ "${DEVICE_TYPE}" = 'Phone' ]; then
+    install_android_package 'com.aurora.store' 'https://auroraoss.com/downloads/AuroraStore/Release/AuroraStore-4.6.2.apk'
+    install_android_package 'org.fdroid.fdroid' 'https://f-droid.org/F-Droid.apk'
 
-install_android_package 'org.fossify.calculator' 'https://f-droid.org/repo/org.fossify.calculator_3.apk'
-install_android_package 'org.fossify.calendar' 'https://f-droid.org/repo/org.fossify.calendar_4.apk'
-install_android_package 'org.fossify.camera' 'https://f-droid.org/repo/org.fossify.camera_2.apk'
-install_android_package 'org.fossify.clock' 'https://f-droid.org/repo/org.fossify.clock_1.apk'
-install_android_package 'org.fossify.filemanager' 'https://f-droid.org/repo/org.fossify.filemanager_2.apk'
-install_android_package 'org.fossify.gallery' 'https://f-droid.org/repo/org.fossify.gallery_9.apk'
-install_android_package 'org.fossify.keyboard' 'https://f-droid.org/repo/org.fossify.keyboard_3.apk'
+    install_android_package 'org.fossify.calculator' 'https://f-droid.org/repo/org.fossify.calculator_3.apk'
+    install_android_package 'org.fossify.calendar' 'https://f-droid.org/repo/org.fossify.calendar_4.apk'
+    install_android_package 'org.fossify.camera' 'https://f-droid.org/repo/org.fossify.camera_2.apk'
+    install_android_package 'org.fossify.clock' 'https://f-droid.org/repo/org.fossify.clock_1.apk'
+    install_android_package 'org.fossify.filemanager' 'https://f-droid.org/repo/org.fossify.filemanager_2.apk'
+    install_android_package 'org.fossify.gallery' 'https://f-droid.org/repo/org.fossify.gallery_9.apk'
+    install_android_package 'org.fossify.keyboard' 'https://f-droid.org/repo/org.fossify.keyboard_3.apk'
 
-#install_android_package 'com.automattic.simplenote' 'https://github.com/Automattic/simplenote-android/releases/download/2.35/simplenote.apk'
-install_android_package 'org.breezyweather' 'https://f-droid.org/repo/org.breezyweather_50208.apk'
+    #install_android_package 'com.automattic.simplenote' 'https://github.com/Automattic/simplenote-android/releases/download/2.35/simplenote.apk'
+    install_android_package 'org.breezyweather' 'https://f-droid.org/repo/org.breezyweather_50208.apk'
 
-# Only install Calling & Messaging apps if Android STK is installed (supports a SIM card)
-if is_android_package_installed 'com.android.stk'; then
-    install_android_package 'org.fossify.contacts' 'https://f-droid.org/repo/org.fossify.contacts_2.apk'
-    install_android_package 'org.fossify.phone' 'https://f-droid.org/repo/org.fossify.phone_3.apk'
-    install_android_package 'org.fossify.messages' 'https://f-droid.org/repo/org.fossify.messages_2.apk'
+    # Only install Calling & Messaging apps if Android STK is installed (supports a SIM card)
+    if is_android_package_installed 'com.android.stk'; then
+        install_android_package 'org.fossify.contacts' 'https://f-droid.org/repo/org.fossify.contacts_2.apk'
+        install_android_package 'org.fossify.phone' 'https://f-droid.org/repo/org.fossify.phone_3.apk'
+        install_android_package 'org.fossify.messages' 'https://f-droid.org/repo/org.fossify.messages_2.apk'
+    fi
 fi
 
 ################################################
