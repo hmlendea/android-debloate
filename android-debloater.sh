@@ -296,6 +296,7 @@ uninstall_android_package \
 # Game Tools
 disable_android_package \
     'com.oplus.games' \
+    'com.google.android.play.games' \
     'com.samsung.android.game.gametools' \
     'com.samsung.android.game.gamehome' \
     'com.samsung.android.game.gos' \
@@ -334,6 +335,7 @@ disable_android_package \
 # Music Players
 disable_android_package \
     'com.google.android.music' \
+    'com.google.android.youtube.tvmusic' \
     'com.heytap.music' \
     'com.miui.player' \
     'com.xiaomi.mimusic2' \
@@ -451,6 +453,7 @@ disable_android_package \
 disable_android_package \
     'com.coloros.video' \
     'com.mitv.mivideoplayer' \
+    'com.mitv.tvhome.atv' \
     'com.mitv.videoplayer' \
     'com.miui.videoplayer' \
     'com.netflix.mediaclient' \
@@ -510,6 +513,7 @@ disable_android_package \
     'com.miui.analytics' \
     'com.miui.bugreport' \
     'com.miui.miservice' \
+    'com.miui.tv.analytics' \
     'com.oplus.logkit' \
     'com.oplus.statistics.rom' \
     'com.qualcomm.qti.qms.service.telemetry'
@@ -551,6 +555,7 @@ disable_android_package \
     'com.android.apps.tag' \
     'com.android.bookmarkprovider' \
     'com.android.egg' \
+    'com.android.printspooler' \
     'com.android.providers.media' \
     'com.android.providers.partnerbookmarks' \
     'com.android.settings.intelligence' \
@@ -591,6 +596,8 @@ disable_android_package \
     'com.intel.intelligentdisplay' \
     'com.intel.security.service' \
     'com.microsoft.appmanager' \
+    'com.mitv.milinkservice' \
+    'com.mitv.tvhome.michannel' \
     'com.miui.hybrid.accessory' \
     'com.miui.phrase' \
     'com.miui.yellowpage' \
@@ -600,7 +607,9 @@ disable_android_package \
     'com.samsung.android.authfw' \
     'com.samsung.android.samsungpass' \
     'com.samsung.android.samsungpassautofill' \
-    'com.xiaomi.mipicks'
+    'com.xiaomi.mipicks' \
+    'com.xiaomo.tv.milegal' \
+    'tv.alphonso.alphonso_eula'
 
 # Degoogle
 disable_android_package \
