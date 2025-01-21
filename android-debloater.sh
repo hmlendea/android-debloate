@@ -149,8 +149,8 @@ disable_android_package \
     'com.asus.appmanager'
 
 # App Store
+[ "${DEVICE_TYPE}" = 'Phone' ] && disable_android_package 'com.android.vending'
 disable_android_package \
-    'com.android.vending' \
     'com.sec.android.app.samsungapps'
 
 # AR & VR
